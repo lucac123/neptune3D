@@ -7,7 +7,7 @@ private:
 	unsigned int ID;
 
 public:
-	TextureField(int format, int width, int height, int depth);
+	TextureField(float *data, int format, int width, int height, int depth);
 
 	void bind(GLenum texture = GL_TEXTURE0) const;
 	void unbind(GLenum texture = GL_TEXTURE0) const;

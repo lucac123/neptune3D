@@ -138,11 +138,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="lib\glad.c" />
+    <ClCompile Include="src\utitlity\ResourceManager.cpp" />
     <ClCompile Include="src\component\Aura.cpp" />
     <ClCompile Include="src\entity\Entity.cpp" />
     <ClCompile Include="src\entity\Volume.cpp" />
-    <ClCompile Include="src\GL\Shader.cpp" />
-    <ClCompile Include="src\GL\TextureField.cpp" />
+    <ClCompile Include="src\gl\Shader.cpp" />
+    <ClCompile Include="src\gl\TextureField.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\scene\Camera.cpp" />
     <ClCompile Include="src\scene\Scene.cpp" />
@@ -154,11 +155,17 @@
     <ClInclude Include="includes\FrameBuffer.h" />
     <ClInclude Include="includes\Neptune.h" />
     <ClInclude Include="includes\Scene.h" />
+    <ClInclude Include="includes\Shader.h" />
     <ClInclude Include="includes\TextureField.h" />
     <ClInclude Include="includes\Volume.h" />
+    <ClInclude Include="includes\ResourceManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\component\Neptune.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\frag\aura.frag" />
+    <None Include="shaders\vert\aura.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

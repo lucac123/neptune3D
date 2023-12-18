@@ -6,6 +6,7 @@
 class Neptune {
 private:
 	Volume *fluidVolume;
+	TextureField* volumeField;
 public:
 	Neptune();
 	~Neptune();

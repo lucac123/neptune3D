@@ -1,12 +1,20 @@
 #include "Camera.h"
 
-Camera::Camera(glm::vec3 target, float distance, float phi, float theta)
-	: target(target), distance(distance), phi(phi), theta(theta), up(glm::vec3(0, 1, 0)), speed(2.5f), zoom(45.0f), sensitivity(0.01f) {
+Camera::Camera(glm::vec3 target, float distance, float phi, float theta, float aspectRatio)
+	: target(target), distance(distance), phi(phi), theta(theta), up(glm::vec3(0, 1, 0)), speed(2.5f), zoom(45.0f), sensitivity(0.01f), aspectRatio(aspectRatio) {
 	update_vectors();
 }
 
 glm::mat4 Camera::getViewMatrix() {
 	return glm::lookAt(this->position, this->position + this->front, this->up);
+}
+
+float Camera::getZoom() {
+	return this->zoom;
+}
+
+float Camera::getAspectRatio() {
+	return this->aspectRatio;
 }
 
 void Camera::move(float deltaX, float deltaY) {

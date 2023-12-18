@@ -3,7 +3,7 @@
 #include <gtc/matrix_transform.hpp>
 
 class Camera {
-public:
+private:
 	// Position attributes
 	glm::vec3 target, position, front, up, right;
 
@@ -11,11 +11,14 @@ public:
 	float distance, phi, theta;
 
 	// Options
-	float speed, zoom, sensitivity;
+	float speed, zoom, sensitivity, aspectRatio;
 
-	Camera(glm::vec3 target = glm::vec3(0.0f, 0.0f, 0.0f), float distance = 3.0f, float phi = glm::radians(45.0f), float theta = glm::radians(45.0f));
+public:
+	Camera(glm::vec3 target = glm::vec3(0.0f, 0.0f, 0.0f), float distance = 3.0f, float phi = glm::radians(45.0f), float theta = glm::radians(45.0f), float aspectRatio = 1920.0f/1080.0f);
 
 	glm::mat4 getViewMatrix();
+	float getZoom();
+	float getAspectRatio();
 
 	void move(float deltaX, float deltaY);
 	void pan(float deltaX, float deltaY);

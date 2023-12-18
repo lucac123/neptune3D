@@ -17,6 +17,8 @@ public:
 	Scene();
 	~Scene();
 
+	Camera* getCamera();
+
 
 	void timeStep(float deltaTime);
 	void render();

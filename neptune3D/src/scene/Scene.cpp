@@ -14,11 +14,15 @@ Scene::Scene() {
 }
 
 Scene::~Scene() {
-	delete this->fluidComponent;
-	delete this->volumeRenderer;
+	delete this->neptune;
+	delete this->aura;
 	delete this->backgroundColor;
 
 	delete this->camera;
+}
+
+Camera* Scene::getCamera() {
+	return this->camera;
 }
 
 void Scene::timeStep(float deltaTime) {
@@ -27,7 +31,7 @@ void Scene::timeStep(float deltaTime) {
 
 void Scene::render() {
 	glClearColor(this->backgroundColor->x, this->backgroundColor->y, this->backgroundColor->z, this->backgroundColor->w);
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	this->aura->render(this->camera, this->neptune->getVolume());
 }

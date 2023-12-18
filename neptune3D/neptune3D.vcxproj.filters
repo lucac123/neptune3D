@@ -36,13 +36,16 @@
     <ClCompile Include="src\scene\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\GL\Shader.cpp">
+    <ClCompile Include="src\gl\Shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\GL\TextureField.cpp">
+    <ClCompile Include="src\gl\TextureField.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\component\Neptune.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utitlity\ResourceManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,5 +74,15 @@
     <ClInclude Include="includes\FrameBuffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="includes\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\ResourceManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\vert\aura.vert" />
+    <None Include="shaders\frag\aura.frag" />
   </ItemGroup>
 </Project>

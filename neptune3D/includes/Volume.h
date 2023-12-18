@@ -8,9 +8,11 @@ private:
 	unsigned int domainVertexArray, domainVertexBuffer;
 
 public:
-	Volume();
+	Volume(TextureField *densityField);
 	~Volume();
 
 	TextureField* getDensityField();
-	TextureField* setDensityField(TextureField* densityField);
+	void setDensityField(TextureField* densityField);
+
+	void bind();
 };
