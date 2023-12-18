@@ -9,6 +9,10 @@ glm::mat4 Camera::getViewMatrix() {
 	return glm::lookAt(this->position, this->position + this->front, this->up);
 }
 
+glm::vec3 Camera::getPosition() {
+	return this->position;
+}
+
 float Camera::getZoom() {
 	return this->zoom;
 }
