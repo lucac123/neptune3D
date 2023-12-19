@@ -63,8 +63,8 @@ int main() {
 		lastFrame = currentFrame;
 
 		// Delegate rendering to Scene object
-		scene.render();
 		scene.timeStep(deltaTime);
+		scene.render();
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();

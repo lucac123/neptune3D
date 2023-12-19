@@ -13,5 +13,6 @@ public:
 	void unbind(GLenum texture = GL_TEXTURE0) const;
 
 	unsigned int getID() const; //Returns ID corresponding with this texture
+	unsigned int setID(unsigned int ID);
 };
 

@@ -166,8 +166,11 @@
     <ClCompile Include="src\component\Neptune.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="shaders\frag\add_force.frag" />
+    <None Include="shaders\frag\advect.frag" />
     <None Include="shaders\frag\aura.frag" />
     <None Include="shaders\frag\neptune.frag" />
+    <None Include="shaders\frag\swap.frag" />
     <None Include="shaders\geom\neptune.geom" />
     <None Include="shaders\vert\aura.vert" />
     <None Include="shaders\vert\neptune.vert" />

@@ -30,3 +30,8 @@ void TextureField::unbind(GLenum texture) const {
 unsigned int TextureField::getID() const {
 	return this->ID;
 }
+unsigned int TextureField::setID(unsigned int ID) {
+	unsigned int oldID = this->ID;
+	this->ID = ID;
+	return oldID;
+}

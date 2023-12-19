@@ -22,7 +22,7 @@ void Aura::render(Camera* camera, Volume *volume) {
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	volume->bind();
-	volume->getDensityField()->bind();
+	volume->getDensityField()->bind(GL_TEXTURE0);
 	this->shader->use();
 
 	glm::mat4 model = glm::mat4(1.0f);
@@ -37,5 +37,6 @@ void Aura::render(Camera* camera, Volume *volume) {
 	this->shader->setUniform("uCameraPos", cameraPos);
 
 	volume->draw();
-	volume->getDensityField()->unbind();
+	volume->getDensityField()->unbind(GL_TEXTURE0);
+	glDisable(GL_BLEND);
 }
