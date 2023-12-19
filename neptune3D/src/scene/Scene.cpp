@@ -6,7 +6,7 @@
 #include <iostream>
 
 Scene::Scene() {
-	this->neptune = new Neptune();
+	this->neptune = new Neptune(128);
 	this->aura = new Aura();
 	this->backgroundColor = new glm::vec4(0.2f, 0.2f, 0.2f, 1.0f);
 
@@ -33,5 +33,6 @@ void Scene::render() {
 	glClearColor(this->backgroundColor->x, this->backgroundColor->y, this->backgroundColor->z, this->backgroundColor->w);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+	this->neptune->timeStep(0);
 	this->aura->render(this->camera, this->neptune->getVolume());
 }

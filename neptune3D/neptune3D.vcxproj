@@ -137,8 +137,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\gl\FrameBuffer.cpp" />
     <ClCompile Include="lib\glad.c" />
-    <ClCompile Include="src\utitlity\ResourceManager.cpp" />
+    <ClCompile Include="src\entity\PointStrip.cpp" />
+    <ClCompile Include="src\utility\ResourceManager.cpp" />
     <ClCompile Include="src\component\Aura.cpp" />
     <ClCompile Include="src\entity\Entity.cpp" />
     <ClCompile Include="src\entity\Volume.cpp" />
@@ -152,20 +154,23 @@
     <ClInclude Include="includes\Aura.h" />
     <ClInclude Include="includes\Camera.h" />
     <ClInclude Include="includes\Entity.h" />
-    <ClInclude Include="includes\FrameBuffer.h" />
     <ClInclude Include="includes\Neptune.h" />
     <ClInclude Include="includes\Scene.h" />
     <ClInclude Include="includes\Shader.h" />
     <ClInclude Include="includes\TextureField.h" />
     <ClInclude Include="includes\Volume.h" />
     <ClInclude Include="includes\ResourceManager.h" />
+    <ClInclude Include="includes\PointStrip.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\component\Neptune.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\frag\aura.frag" />
+    <None Include="shaders\frag\neptune.frag" />
+    <None Include="shaders\geom\neptune.geom" />
     <None Include="shaders\vert\aura.vert" />
+    <None Include="shaders\vert\neptune.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

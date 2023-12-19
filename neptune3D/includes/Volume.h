@@ -15,4 +15,5 @@ public:
 	void setDensityField(TextureField* densityField);
 
 	void bind();
+	void draw();
 };

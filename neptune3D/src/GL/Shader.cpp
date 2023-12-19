@@ -4,7 +4,6 @@ Shader::Shader(const char* vertPath, const char* fragPath) {
 	// Compiling shaders
 	unsigned int vert = this->compileGLSL(vertPath, GL_VERTEX_SHADER);
 	unsigned int frag = this->compileGLSL(fragPath, GL_FRAGMENT_SHADER);
-	//unsigned int frag = 10;
 
 	// Linking shaders into shader program
 
@@ -19,7 +18,7 @@ Shader::Shader(const char* vertPath, const char* fragPath) {
 	glGetProgramiv(this->ID, GL_LINK_STATUS, &success);
 	if (!success) {
 		glGetProgramInfoLog(this->ID, 1024, nullptr, log);
-		std::cout << "Failed to link compiled shaders " << vertPath << " and " << fragPath << std::endl << log << std::endl;
+		std::cerr << "Failed to link compiled shaders " << vertPath << " and " << fragPath << std::endl << log << std::endl;
 	}
 
 	// Cleanup
@@ -27,6 +26,33 @@ Shader::Shader(const char* vertPath, const char* fragPath) {
 	glDeleteShader(frag);
 }
 
+Shader::Shader(const char* vertPath, const char* geomPath, const char* fragPath) {
+	// Compiling shaders
+	unsigned int vert = this->compileGLSL(vertPath, GL_VERTEX_SHADER);
+	unsigned int geom = this->compileGLSL(geomPath, GL_GEOMETRY_SHADER);
+	unsigned int frag = this->compileGLSL(fragPath, GL_FRAGMENT_SHADER);
+
+	// Linking shaders into shader program
+	this->ID = glCreateProgram();
+	glAttachShader(this->ID, vert);
+	glAttachShader(this->ID, geom);
+	glAttachShader(this->ID, frag);
+	glLinkProgram(this->ID);
+
+	// Check for errors
+	int success;
+	char log[1024];
+	glGetProgramiv(this->ID, GL_LINK_STATUS, &success);
+	if (!success) {
+		glGetProgramInfoLog(this->ID, 1024, nullptr, log);
+		std::cerr << "Failed to link compiled shaders " << vertPath << ", " << geomPath << ", and " << fragPath << std::endl << log << std::endl;
+	}
+
+	// Cleanup
+	glDeleteShader(vert);
+	glDeleteShader(geom);
+	glDeleteShader(frag);
+}
 Shader::~Shader() {
 	glDeleteProgram(this->ID);
 }
@@ -65,7 +91,7 @@ void Shader::setUniform(const char* name, glm::mat4& mat) const {
 }
 
 unsigned int Shader::compileGLSL(const char* filePath, GLenum shaderType) const {
-	std::string *fileString = ResourceManager::readFile(filePath);
+	std::string *fileString = ResourceManager::readShader(filePath);
 	const char* code = fileString->c_str();
 	
 	// Create and compile shader

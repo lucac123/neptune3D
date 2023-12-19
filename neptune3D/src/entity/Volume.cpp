@@ -77,3 +77,7 @@ void Volume::setDensityField(TextureField* densityField) {
 void Volume::bind() {
     glBindVertexArray(this->domainVertexArray);
 }
+
+void Volume::draw() {
+    glDrawArrays(GL_TRIANGLES, 0, 36);
+}

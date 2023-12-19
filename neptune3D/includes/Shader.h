@@ -12,6 +12,7 @@ private:
 
 public:
 	Shader(const char* vertPath, const char* fragPath);
+	Shader(const char* vertPath, const char* geomPath, const char* fragPath);
 	~Shader();
 
 	void use() const;

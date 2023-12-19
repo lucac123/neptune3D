@@ -7,6 +7,6 @@
 class ResourceManager
 {
 public:
-	static std::string *readFile(const char* path);
+	static std::string *readShader(const char* path);
 };
 

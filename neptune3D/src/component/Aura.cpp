@@ -2,7 +2,7 @@
 #include<iostream>
 
 Aura::Aura() {
-	this->shader = new Shader("C:/Users/lchac/source/repos/neptune3D/neptune3D/shaders/vert/aura.vert", "C:/Users/lchac/source/repos/neptune3D/neptune3D/shaders/frag/aura.frag");
+	this->shader = new Shader("vert/aura.vert", "frag/aura.frag");
 	this->shader->use();
 	this->shader->setUniform("uBoxVector", 1, 1, 1);
 	this->shader->setUniform("uBoxCorner", -0.5f, -0.5f, -0.5f);
@@ -36,6 +36,6 @@ void Aura::render(Camera* camera, Volume *volume) {
 	glm::vec3 cameraPos = camera->getPosition();
 	this->shader->setUniform("uCameraPos", cameraPos);
 
-	glDrawArrays(GL_TRIANGLES, 0, 36);
+	volume->draw();
 	volume->getDensityField()->unbind();
 }
