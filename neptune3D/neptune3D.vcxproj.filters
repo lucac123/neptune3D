@@ -95,9 +95,12 @@
     <None Include="shaders\frag\aura.frag" />
     <None Include="shaders\vert\neptune.vert" />
     <None Include="shaders\geom\neptune.geom" />
-    <None Include="shaders\frag\neptune.frag" />
     <None Include="shaders\frag\add_force.frag" />
-    <None Include="shaders\frag\swap.frag" />
+    <None Include="shaders\frag\copy.frag" />
     <None Include="shaders\frag\advect.frag" />
+    <None Include="shaders\frag\jacobi.frag" />
+    <None Include="shaders\frag\divergence.frag" />
+    <None Include="shaders\frag\subtract_gradient.frag" />
+    <None Include="shaders\frag\add_substance.frag" />
   </ItemGroup>
 </Project>

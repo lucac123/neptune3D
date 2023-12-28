@@ -24,6 +24,7 @@ void main() {
 	vec3 raySample = vGlobalPosition;
 	while (isTexelInBounds(globalToTexel(raySample))) {
 		vec3 color = uParticleBrightness * texture(uField, globalToTexel(raySample)).rgb;
+		color = abs(color);
 		rayColor += vec4(color, (color.r+color.g+color.b)/3);
 
 		raySample += uStepSize * rayDirection;

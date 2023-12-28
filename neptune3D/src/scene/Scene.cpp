@@ -6,7 +6,7 @@
 #include <iostream>
 
 Scene::Scene() {
-	this->neptune = new Neptune(50);
+	this->neptune = new Neptune(128);
 	this->aura = new Aura();
 	this->backgroundColor = new glm::vec4(0.2f, 0.2f, 0.2f, 1.0f);
 

@@ -1,5 +1,4 @@
 #version 400 core
-in int gl_VertexID;
 
 out VS_OUT {
 	int vertexLayer;
